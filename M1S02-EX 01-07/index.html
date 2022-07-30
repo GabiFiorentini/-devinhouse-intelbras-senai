@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVin-Events</title>
+    <link type="image/png" rel="icon" href="./imagens//fav.png">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!--Estrutura do menu de navegação e logo (titulo e subtitulo)-->
+        <header class="header">
+            <!--Composição da logo(título e subtitulo)-->
+            <div class="title-subtitle">
+                <h1>DEVin<br><span>-Events</span></h1>
+                <h2>Onde a música toca</h2>
+            </div>
+            <!-- Hamburger icon -->
+            <input class="side-menu" type="checkbox" id="side-menu"/>
+            <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+            <!--Menu de navegação-->
+            <nav class="navigation-site">
+                <ul class="menu">
+                    <li><a href="#events">Eventos</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#form">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!--Navegação redes sociais-->
+        <nav class="navigation-networks">
+            <ul class="menu-networks">
+                <li><a href="#"><img src="./imagens/facebook.png" alt="Facebook icone"></a></li>
+                <li><a href="#"><img src="./imagens/twitter.png" alt="Twitter icone"></a></li>
+                <li><a href="#"><img src="./imagens/instagram.png" alt="Instragram icone"></a></li>
+                <li><a href="#"><img src="./imagens/botao-play.png" alt="Play botãp"></a></li>
+            </ul>
+        </nav>
+        <main class="main">
+            <img src="./imagens/metallica.jpg" alt="Vocalista do Metallica em apresentanção">
+            <div class="about-main-event">
+                <h1 class="band-name">
+                    metallica</br> <span>concert
+                </h1>
+            </div>
+            <div class="ticket-main-event">
+                <h2 class="data-main-event">
+                    <span>Sábado 06/04</span></br>
+                    <span class="time">20:00</span>
+                </h2>
+                <div class="ticket">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAAOUlEQVQ4jWNgGAXkgA5KDfhPqSH/kQ1hRBIkB3QyUeIUBgaG7+RognmhnlxbKdLMwMDA0ECJ5uEIAMz3C5Ob6b//AAAAAElFTkSuQmCC">
+                    <span class="line">
+                        <a href="#">Ingressos</a>
+                      </span>
+                </div>
+            </div>
+            Evento principal
+        </main>
+        <section class="next-events" id="events">
+            <div class="important-notices">
+                <hr class="first-line-events">
+                    <p><span class="next">Próximos</span><span>shows</span></p>
+                <hr class="last-line-events">
+            </div>
+            <div class="all-events">
+                <div class="card event-1">
+                    <div class="title-event">
+                        <p class="band">System of a down</p>
+                    </div>
+                    <img src="./imagens/system.jpg" alt="System of a Down">
+                    <div class="data">
+                        <p>04 de abr. de 2023 19:00 - 23:00</p>
+                        <p>Av. Brasil, 98 - São Paulo</p>
+                    </div>
+                    <div class="buy-ticket">
+                        <a href="#">Ingressos</a>
+                    </div>
+                </div>
+                <div class="card event-2">
+                    <div class="title-event">
+                        <p class="band">Stone Sour</p>
+                    </div>
+                    <img src="./imagens/stone.jpg" alt="Stone Sour">
+                    <div class="data">
+                        <p>06 de mar. de 2023 20:00 - 23:30</p>
+                        <p>Av. Abreu, 188 - São Paulo</p>
+                    </div>
+                    <div class="buy-ticket">
+                        <a href="#">Ingressos</a>
+                    </div>
+                </div>
+                <div class="card event-3">
+                    <div class="title-event">
+                        <p class="band">Red hot chili peppers </p>
+                    </div>
+                    <img src="./imagens/red-hot.jpg">
+                    <div class="data">
+                        <p>15 de set. de 2023 21:00 - 03:00</p>
+                        <p>Av. Sul, 98 - São Paulo</p>
+                    </div>
+                    <div class="buy-ticket">
+                        <a href="#">Ingressos</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Formulário de contato-->
+        <form action="#"  id="form">
+            <fieldset>
+                <legend><span>Vamos</span> <br>conversar?</legend>
+                <p class="contact">Tem alguma dúvida ou sugestão? Preencha os campos abaixo e logo nossa equipe irá entrar em contato!</p>
+                <div class="input-style">
+                    <input id="input-name" required type="text" class="input" id="nome">
+                    <label for="nome">Nome</label>
+                </div>
+                <div class="input-style">
+                <input id="input-email" required type="email" class="input" id="email">
+                    <label for="email">Email</label>
+                </div>
+                <textarea  id="message" rows="5" cols="50" placeholder="Deixe sua mensagem aqui..."></textarea>
+                <div class="btn-form">
+                    <input class="btn-submit" type="submit" value="Enviar" onclick="functView()">
+                </div>
+            </fieldset>
+        </form>
+        <!--Informações referente ao desenvolvedor e demais dados do footer-->
+        <footer>
+            <address>
+                Rua das Flores, 180 <br>
+                Cosmópolis, SP - CEP: 13150-000<br>
+                <a href="mailto:gabriela_mf_silva@estudante.sesisenai.org.br">gabriela_mf_silva@estudante.sesisenai.org.br</a>
+            </address>
+            <p>&#169;DEVin-Events. Desenvolvido por <a href="https://www.linkedin.com/in/gabriela-fiorentini/">Gabriela Fiorentini</a></p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,644 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;900&display=swap');
+
+:root{
+    --black : #000000;
+    --white: #ffffff;
+    --soft-red: #fc9779;
+    --red-hat: 'Red Hat Display', sans-serif;
+    --dark-gray: #1b1b1b;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--red-hat);
+    width: 100vw;
+    min-height: 100vh;
+    font-size: 16px;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+/****Definições do container principal****/
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+}
+.header{
+    background-color: var(--black);
+    width: 100vw;
+    position: fixed;
+    z-index: 1;
+}
+/****Título e subtitulo****/
+.title-subtitle{
+    text-align: center;
+    letter-spacing: 0.2rem;
+    margin-top: 4rem;
+}
+.title-subtitle h1{
+    font-size: 1.3rem;
+}
+.title-subtitle span{
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--soft-red);
+}
+.title-subtitle h2{
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-left: 1.25rem;
+    font-weight: 400;
+}
+
+/*Menu de navegação - Principal*/
+.navigation-site{
+    max-height: 0; /*ocultando os itens do menu*/
+    transition: max-height .4s ease-out;
+    background-color: var(--black);
+    position: fixed; 
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+}
+.navigation-site .menu li a{
+    display: block;
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--light-gray);
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.navigation-site .menu li a:hover{
+    color: var(--soft-red);
+    transition: 0.3s;
+}
+.menu li:first-child{
+    padding-top: 5rem; /*AJUSTAR ALTURA CONFORNE NECESSIDADE*/
+}
+.side-menu:checked ~ .navigation-site {
+    max-height: 100%;
+}
+/*Hamb menu icon*/
+.side-menu{
+    display: none; /**Oculta o checkbox*/
+}
+.hamb{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    padding: 2.19rem 1.56rem;
+}
+.hamb-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+}
+.hamb-line::before, 
+.hamb-line::after{
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.hamb-line::before{
+    top: 8px;
+}
+.hamb-line::after{
+    top: -8px;
+}
+
+/*Animação do icon do menu de navegação*/
+.side-menu:checked ~ .navigation-site{
+    max-height: 100vh;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+
+/*Menu de navegação - Redes sociais*/
+.navigation-networks{
+    position: fixed;
+    z-index: 2;
+}
+.menu-networks{
+    display: flex;
+    padding: 25px 0;
+}
+.menu-networks li a{
+    padding: 1rem;
+}
+.menu-networks li a img{
+    width: 1.5rem;
+}
+
+/****Evento principal****/
+.main{
+    color: var(--black);
+    margin-top: 11rem;
+    width: 100vw;
+    position: relative;
+}
+.main img{
+    width: 100%;
+}
+.about-main-event{
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    padding: 1.5rem;
+}
+.band-name{
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+
+    line-height: 1.5rem;
+}
+.band-name span{
+    font-weight: 400;
+    color: var(--soft-red);
+    font-size: 1.2rem;
+}
+.ticket-main-event{
+    background-color: var(--soft-red);
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.5rem 0 1.5rem 2rem;
+}
+/****Ingressos e demais informações sobre o evento principal*/
+.ticket{
+    background-color: var(--white);
+    width: 70%;
+    margin-left: -65px;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+}
+.ticket img{
+    width: 25px;
+}
+.ticket a{
+    position: relative;
+    text-transform: uppercase;
+    color:var(--black);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding-left: 1rem;
+}
+.ticket a:hover{
+    color: var(--soft-red);
+}
+.line{
+    margin-left: 2.5rem;
+    border: 3px solid var(--black);
+    position: absolute;
+    padding: 0.5rem 0.7rem;
+}
+.data-main-event{
+    font-size: 1.3rem;
+}
+.data-main-event span{
+    display: inline-block;
+    color: var(--white);
+    text-transform: uppercase;
+    width: 100%;
+    background-color: var(--black);
+}
+.data-main-event .time{
+    width: fit-content;
+    margin: 0.5rem 0 1.5rem
+}
+/****Próximos eventos****/
+.important-notices{
+    width: 90%;
+    margin: 0 auto;
+    text-transform: uppercase;
+    color: var(--black);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    text-align: center;
+}
+.important-notices .next{
+    color: var(--black);
+    background-color: var(--white);
+    padding: 0.9rem 0.5rem;
+}
+.important-notices  span{
+    display: inline-block;
+    background-color: var(--soft-red);
+    padding: 0.1rem 2rem;
+    border-bottom: 5px solid var(--white);
+}
+.first-line-events, .last-line-events{
+    height: 4px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.first-line-events{
+    background-color: var(--white);
+    border-color: var(--white);
+}
+.last-line-events{
+    background-color: var(--soft-red);
+    border-color: var(--soft-red);
+    margin-bottom: 3.5rem;
+}
+/****Cartões dos próximos eventos****/
+.all-events{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /*O auto-fit é uma especie de ajuste automatico, minmax aceita os parametros maximos e minimos que a colura irá preencher*/
+    gap: 20px;
+    background-color: var(--dark-gray);
+    padding:1rem 0 1rem 0;
+}
+.card{
+    padding: 0.75rem;
+    margin: 0 1.4rem;
+    background-color: var(--black);
+    position: relative;
+
+}
+.card .band{
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+.card img{
+    width: 100%;
+    margin-top: 3.75rem;
+    margin-bottom: 0.5rem;
+    filter: grayscale(100%);
+}
+.card .data{
+    margin-bottom: 4.5rem;
+    font-size: 1.2rem;
+}
+.title-event{
+    padding-top: 0.75rem;
+    position: absolute;
+    top: 0;
+}
+.card .buy-ticket{
+    position: absolute;
+    bottom: 2.5%;
+    border: 3px solid var(--soft-red);
+    padding: 0.75rem 1rem;
+    text-transform: uppercase;
+    left: 50%;
+    margin: -60px 0 0 -60px;
+}
+.card .buy-ticket a{
+    color: var(--soft-red);
+}
+.card .buy-ticket:hover{
+    opacity: 0.5;
+    transition: 0.3s;    
+}
+/****Formulário de contato****/
+form{
+    padding: 2rem 0;
+}
+fieldset{
+    background-color: var(--soft-red);
+    margin: 0 1.4rem;
+    padding: 0.75rem;
+}
+legend{
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+legend span{
+    color: var(--soft-red);
+}
+fieldset p{
+    color: var(--black);
+    letter-spacing: 0.08rem;
+    font-weight: 400;
+    line-height: 1.35rem;
+    margin: 0.5rem 0 2.5rem 0; 
+}
+.input-style{
+    margin: 1.75rem 0;
+    position: relative;
+}
+.input-style label{
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--dark-gray);
+    text-transform: uppercase;
+    cursor: text;
+    transition: 0.5s ease-in-out;
+}
+.input-style input{
+    width: 100%;
+    padding: 5px;
+    border: 0;
+    color: var(--dark-gray);
+    background-color: var(--soft-red);
+    border-bottom: 2px solid var(--black);
+    outline: 0;
+    font-size: 1rem;
+}
+.input-style input:focus,
+.input-style input:valid{
+    border-bottom: 2px solid var(--white);
+}
+.input-style input:focus ~ label, 
+.input-style input:valid ~ label{
+    color: var(--white);
+    transform: translateY(-24px);
+    font-size: 12px;
+}
+textarea{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    resize: none;
+    border-radius: 5px;
+    color: var(--dark-gray);
+    font-family: var(--red-hat);
+}
+.btn-submit{
+    background-color: var(--soft-red);
+    border: 3px solid var(--black);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.btn-submit:hover{
+    opacity: 0.5;
+    transition: 0.3s;    
+}
+
+.btn-form{
+    margin: 1rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/*****Desenvolvedor e demais dados do footer****/
+footer{
+    margin: 1rem 0 0 0;
+}
+address{
+    display: block;
+    font-style: normal;
+    color: var(--white);
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+address a{
+    color: var(--white);
+}
+footer p{
+    background-color: var(--dark-gray);
+    font-size: 0.8rem;
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+}
+footer p a{
+    color: var(--white);
+}
+
+
+/***************Responsivo**************/
+
+/*Estilo aplicado a partir de 778px - Telas pequenas e laptops*/
+@media (min-width: 778px){
+    /****Título e subtitulo****/
+    .title-subtitle {
+        margin-top: 4rem;
+    }
+    .title-subtitle h1{
+        font-size: 1.4rem;
+    }
+    .title-subtitle span{
+        font-size: 2.7rem;
+    }
+    .title-subtitle h2{
+        font-size: 0.85rem;
+    }
+
+    /****Evento principal****/
+    .about-main-event{
+        padding: 3.5rem;
+    }
+    .band-name{
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+    }
+    .band-name span{
+        font-size: 1.8rem;
+    }
+    /****Ingressos e demais informações sobre o evento principal*/
+    .ticket{
+        margin-left: -20%;
+    }
+    .ticket-main-event{
+        position: absolute;
+        top: 35%;
+        margin-left: 3.5rem;
+        width: 40%;
+    }
+    .line{
+        margin-left: 2rem;
+    }
+
+    /****Próximos eventos****/
+    .important-notices{
+        text-align: left;
+        font-size: 2.5rem;
+    }
+    .first-line-events, .last-line-events{
+        margin: 0 auto;
+    }
+    .first-line-events{
+        width: 20%;
+        margin-bottom: 2.5rem;
+    }
+    
+    .last-line-events{
+        width: 80%;
+        margin-top: 2.5rem;
+        margin-bottom: 4rem;
+    }
+    .important-notices .next{
+        padding: 0.75rem 2rem;
+        margin-left: 10%;
+    }
+
+    /****Cartões dos próximos eventos****/
+    .all-events{
+        padding: 2.5rem 3rem;
+    }
+
+    /****Formulário de contato****/
+    fieldset{
+        margin: 2rem 4.10rem;
+    }
+}
+
+
+/*Estilo aplicado a partir de 1024px - Desktop em diante*/
+@media (min-width: 1024px){
+    /****Título e subtitulo****/
+    .title-subtitle {
+        margin-top: 1.5rem;
+    }
+    .title-subtitle h1{
+        font-size: 1.3rem;
+    }
+    .title-subtitle span{
+        font-size: 2.3rem;
+    }
+    .title-subtitle h2{
+        font-size: 1rem;
+    }
+    
+    /*Menu de navegação - Principal*/
+    .hamb{
+        display: none;
+    }
+    .navigation-site{
+        height: auto;
+        overflow: visible;
+        top: 0;
+        float: left;
+        width: fit-content;
+    }
+    .menu{
+        display: flex;
+    }
+    .menu li:first-child{
+        padding-top: 0;
+    }
+    .navigation-site .menu li a{
+        font-size: 1.2rem;
+        padding: 0 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    /*Menu de navegação - Redes socias*/
+    .navigation-networks{
+        background-color: var(--black);
+        top: 50%;
+        margin-top: -5rem;
+    }
+    .menu-networks{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+    }
+    .menu-networks li{
+        padding: 0.7rem 0;
+    }
+
+    /****Evento principal****/
+    .main{
+        margin-top: 10rem;
+    }
+    .about-main-event{
+        padding: 5rem 8rem;
+    }
+    .band-name{
+        font-size: 5rem;
+        line-height: 4.5rem;
+    }
+    .band-name span{
+        font-size: 4rem;
+    }
+
+    /****Ingressos e demais informações sobre o evento principal*/
+    .ticket-main-event{
+        position: absolute;
+        top: 40%;
+        margin-left: 8rem;
+        width: 30%;
+    }
+    .line{
+        margin-left: 3.7rem;
+    }
+
+    /****Próximos eventos****/
+    .important-notices{
+        font-size: 3.5rem;
+    }
+    .first-line-events, .last-line-events{
+        margin: 0 auto;
+    }
+    .first-line-events{
+        width: 20%;
+        margin-bottom: 2.5rem;
+    }
+    .last-line-events{
+        width: 80%;
+        margin-top: 2.5rem;
+    }
+    .important-notices .next{
+        padding: 0.75rem 2rem;
+    }
+    .last-line-events{
+        margin-bottom: 5rem;
+    }
+
+    /****Cartões dos próximos eventos****/
+    .all-events{
+        padding: 4.5rem 5rem;
+    }
+    .card .band{
+        font-size: 1.4rem;
+    }
+    .card .data{
+        margin-bottom: 4.5rem;
+        font-size: 1.2rem;
+    }
+
+    /****Formulário de contato****/
+    fieldset{
+        max-width: 750px;
+        margin: 2.5rem auto;
+
+    }
+}

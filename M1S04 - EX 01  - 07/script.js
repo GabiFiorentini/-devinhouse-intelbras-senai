@@ -46,8 +46,6 @@ function senha(contaSelecionada){
   }
 }
 
-
-
 function operacao(){
   //Selecionar o tipo de operação
   const selectOperacao = document.getElementById("select-operacao")
@@ -73,7 +71,6 @@ function operacao(){
 
   senha(contaSelecionada)
 }
-
 
 function sacar(contaSelecionada, valor){
   let contaSaque = mapearConta(contaSelecionada)
@@ -103,7 +100,6 @@ function depositar(contaSelecionada, valor){
   }
 
 }
-
 
 function mapearConta(contaSelecionada){
   let conta = contasClientes.find(function(value, index, arr){

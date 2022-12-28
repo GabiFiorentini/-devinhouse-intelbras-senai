@@ -59,3 +59,10 @@ WHERE agencia = 123
 SELECT COUNT(cod_agencia_conta) 
 FROM banco.conta 
 GROUP BY cod_agencia_conta
+
+## [M2S08] Ex 5 - Para cada agência (cod_agencia) com menos de 1000 contas, listar os valores máximo e mínimo dos saldos dessas contas, assim como o saldo médio.
+SELECT agencia, COUNT(cod_agencia_conta)
+FROM banco.conta
+INNER JOIN banco.agencia
+	ON banco.conta.cod_agencia_conta = banco.agencia.cod_agencia
+GROUP BY agencia

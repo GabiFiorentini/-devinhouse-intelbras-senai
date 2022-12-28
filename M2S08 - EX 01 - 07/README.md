@@ -54,3 +54,8 @@ FROM banco.conta
 INNER JOIN banco.agencia
 	ON banco.conta.cod_agencia_conta = banco.agencia.cod_agencia
 WHERE agencia = 123
+
+## [M2S08] Ex 4 - Listar o número de contas existentes em cada agência.
+SELECT COUNT(cod_agencia_conta) 
+FROM banco.conta 
+GROUP BY cod_agencia_conta

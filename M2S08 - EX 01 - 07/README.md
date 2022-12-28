@@ -40,3 +40,7 @@ CREATE TABLE banco.emprestimo (
 	valor NUMERIC(10,2) NOT NULL
 );
 
+## [M2S08] Ex 2 -  Quais os clientes que residem em Braga?
+SELECT nome_cliente 
+FROM banco.cliente
+WHERE localidade = 'Braga'

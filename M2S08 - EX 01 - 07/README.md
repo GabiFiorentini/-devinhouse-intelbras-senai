@@ -47,3 +47,10 @@ SELECT * FROM banco.cliente
 SELECT nome_cliente 
 FROM banco.cliente
 WHERE localidade = 'Braga'
+
+## [M2S08] Ex 3 - Quais os clientes (cod_cliente) com contas na agência cod_agencia = ‘123’?
+SELECT cod_cliente_conta, cod_agencia_conta, agencia
+FROM banco.conta
+INNER JOIN banco.agencia
+	ON banco.conta.cod_agencia_conta = banco.agencia.cod_agencia
+WHERE agencia = 123

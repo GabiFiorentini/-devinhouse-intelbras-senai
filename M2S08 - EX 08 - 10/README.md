@@ -25,3 +25,11 @@ FROM concessionaria.veiculo
 WHERE concessionaria.veiculo.preco = preco
 );
 
+## [M2S08] Ex 9 - Exiba os nomes dos clientes que compraram o veículo Palio
+SELECT modelo, nome_cliente, sobrenome_cliente
+FROM concessionaria.venda
+INNER JOIN concessionaria.veiculo
+	ON concessionaria.venda.renavam_venda = concessionaria.veiculo.renavam
+INNER JOIN concessionaria.cliente
+	ON concessionaria.venda. cpf_cliente_compra = concessionaria.cliente.cpf
+	WHERE modelo = 'Palio'

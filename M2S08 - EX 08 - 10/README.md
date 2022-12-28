@@ -33,3 +33,14 @@ INNER JOIN concessionaria.veiculo
 INNER JOIN concessionaria.cliente
 	ON concessionaria.venda. cpf_cliente_compra = concessionaria.cliente.cpf
 	WHERE modelo = 'Palio'
+
+## [M2S08] Ex 10 - Exiba o nome do cliente que comprou o carro mais caro.
+SELECT modelo, nome_cliente, preco
+FROM concessionaria.venda
+INNER JOIN concessionaria.veiculo
+	ON concessionaria.venda.renavam_venda = concessionaria.veiculo.renavam
+INNER JOIN concessionaria.cliente
+	ON concessionaria.venda.cpf_cliente_compra = concessionaria.cliente.cpf
+WHERE preco = (SELECT MAX(concessionaria.veiculo.preco)
+			  FROM concessionaria.veiculo
+			  WHERE concessionaria.veiculo.preco = preco); 

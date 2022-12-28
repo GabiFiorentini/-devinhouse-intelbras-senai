@@ -72,3 +72,12 @@ SELECT cod_cliente_emprestimo, nome_cliente
 FROM banco.emprestimo
 INNER JOIN banco.cliente
 	ON banco.emprestimo.cod_cliente_emprestimo = banco.cliente.cod_cliente
+
+## [M2S08] Ex 7 - Uma expressão geral DDL e uma DML são, respectivamente:
+a) Drop e Insert Into.
+b) Create e Alter.
+c) Update e Select.
+d) Update e Drop.
+e) Insert Into e Alter
+
+Resposta: a) Drop e Insert Into.

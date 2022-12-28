@@ -61,11 +61,12 @@ FROM banco.conta
 GROUP BY cod_agencia_conta
 
 ## [M2S08] Ex 5 - Para cada agência (cod_agencia) com menos de 1000 contas, listar os valores máximo e mínimo dos saldos dessas contas, assim como o saldo médio.
-SELECT agencia, COUNT(cod_agencia_conta)
+SELECT MIN(saldo) AS "Valor maximo de saldo",
+	   MAX(saldo) AS "Valor minimo de saldo",
+	   AVG(saldo) AS "Saldo medio"
 FROM banco.conta
-INNER JOIN banco.agencia
-	ON banco.conta.cod_agencia_conta = banco.agencia.cod_agencia
-GROUP BY agencia
+	WHERE cod_agencia_conta < 1000
+	GROUP BY cod_agencia_conta
 
 ## [M2S08] Ex 6 - Quais os clientes (cod_cliente e cliente) com, pelo menos, um empréstimo no banco?
 SELECT cod_cliente_emprestimo, nome_cliente

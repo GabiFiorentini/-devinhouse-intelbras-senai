@@ -66,3 +66,9 @@ FROM banco.conta
 INNER JOIN banco.agencia
 	ON banco.conta.cod_agencia_conta = banco.agencia.cod_agencia
 GROUP BY agencia
+
+## [M2S08] Ex 6 - Quais os clientes (cod_cliente e cliente) com, pelo menos, um empréstimo no banco?
+SELECT cod_cliente_emprestimo, nome_cliente
+FROM banco.emprestimo
+INNER JOIN banco.cliente
+	ON banco.emprestimo.cod_cliente_emprestimo = banco.cliente.cod_cliente
